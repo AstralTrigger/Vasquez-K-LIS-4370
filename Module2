@@ -1,0 +1,13 @@
+### Module 2 Assignment ###
+
+# Creating assignment2 vector #
+assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17, 22, 20, 22)
+
+# Creating myMean function, this function takes the sum of assignment2 and divides it agains the length of assignment2 and then returns the result. #
+myMean <- function(assignment2)
+  { 
+    return(sum(assignment2)/length(assignment2)) 
+}
+
+# Using the function myMean and passing the assignment2 vector against it to provide the mean of the vector. #
+myMean(assignment2)
