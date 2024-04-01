@@ -1,0 +1,84 @@
+---
+title: "Module#12"
+author: "Kevin Vasquez"
+date: "2024-04-01"
+output: word_document
+---
+
+My program will take user input and ask for two series of numbers. Then it will perform one of
+the four basic arithmetic operations. 
+*Addition
+*Subtraction
+*Multiplication
+*Division
+
+The function will also ask for user input in asking which operation will be done, then the result
+will be displayed.
+
+```{r}
+
+vasquez_function <- function(x,y) {
+  print("This function takes two user input vectors and performs basic arithmetic operations. When entering numbers, be sure to space each number entry and enter the same amount of numbers for both series of numbers. When you have entered the desired numbers, hit enter once to store the numbers, then hit enter again to go to the next line. When entering the desired operation, type one of the following: add, subtract, multiply, or divide.")
+  
+  # Input user data for the first set of numbers
+  print("Enter a series of numbers: ")
+  x = scan()
+  
+  #Input user data for second set of numbers
+  print("Enter a second series of numbers: ")
+  y = scan()
+  
+  #First if statement validates the length of both sets of numbers.
+  #If both sets do not have the same amount of numbers, an error message will display
+  #to the user, asking to retry number entry.
+  
+  #It also stores the desired operation for future use.
+  if(length(x) == length(y)){
+      operation_var <- readline(prompt = "Enter desired operation: ")
+        
+      #Second if statement takes the user inputed operation and matches it with the 
+      #corresponding operation. If an invalid entry was made, an error message will
+      #display to the user, asking to try again. 
+      if(operation_var == "add"){
+        result1 <- sum(x) + sum(y)
+        print(paste0("You chose addition, the result is: ", result1))
+      }
+      else if (operation_var == "subtract"){
+        result2 <- sum(x) - sum(y)
+        print(paste0("You chose subtract, the result is: ", result2))
+      }
+      else if (operation_var == "multiply"){
+        result3 <- sum(x) * sum(y)
+        print(paste0("You chose multiply, the result is: ", result3))
+      }
+      else if (operation_var == "divide"){
+        result4 <- sum(x) / sum(y)
+        print(paste0("You chose division, the result is: ", result4))
+      }
+      else if (operation_var != c("add, subtract, multiply, divide")){
+        print("You did not write one of the operations, try again!")
+      }
+  }
+    
+  
+  else if(length(x) != length(y)){
+    print("You did not give two vectors of the same length, try again!")
+  }
+}
+
+```
+
+Testing the function using user input data.
+
+```{r}
+vasquez_function()
+```
+
+Testing if assigning a variable will save the result of the function. It ends up being stored as
+a character string for easy access. In the future, I would like to save the variable as an integer, while still displaying the result.
+
+```{r}
+test <- vasquez_function()
+
+print(test)
+```
